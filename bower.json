@@ -1,0 +1,16 @@
+{
+  "name": "microvellum-client-portal",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "animate.css": "latest",
+    "angular": "latest",
+    "angular-resource": "latest",
+    "angular-route": "latest",
+    "angular-sanitize": "latest",
+    "lodash": "latest"
+  },
+  "devDependencies": {
+    "angular-tipped": "latest"
+  }
+}

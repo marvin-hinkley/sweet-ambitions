@@ -1,0 +1,33 @@
+@import 'settings';
+//---------------------------Mixins-------------------------------------
+@mixin animate($attrs, $duration: 0.3s) {
+    $args: to-string($attrs, $duration);
+    -webkit-transition: $args -webkit-transform $duration;
+    -moz-transition: $args -moz-transform $duration;
+    -ms-transition: $args -ms-transform $duration;
+    -o-transition: $args -o-transform $duration;
+    transition: $args -transform $duration;
+}
+@mixin flexbox($direction) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: $direction;
+}
+@mixin box-shadow( $horiz : .5em , $vert : .5em , $blur : 0px , $spread : 0px , $color : $color-primary ){
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+  -moz-box-shadow: $horiz $vert $blur $spread $color;
+  box-shadow: $horiz $vert $blur $spread $color;
+}
+//---------------------------Functions-------------------------------------
+$color-key: 'base' !default;
+@function theme-color($name: 'primary', $variant: $color-key) {
+    $color: null;
+    $color-spectrum: map-get($primary-colors, $name);
+    @if $color-spectrum {
+        $color: map-get($color-spectrum, $variant);
+    }
+    @return $color;
+}
