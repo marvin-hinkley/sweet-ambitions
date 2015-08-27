@@ -1,4 +1,4 @@
-angular.module('app.posts').factory('Post', ['$http' function ($http) {
+angular.module('app.posts').factory('Post', ['$http', function ($http) {
     var Post = function (post) {
         
     };

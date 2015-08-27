@@ -1,4 +1,4 @@
-angular.module('app.tasks').factory('Task', ['$http' function ($http) {
+angular.module('app.tasks').factory('Task', ['$http', function ($http) {
     var Task = function (task) {
         
     };

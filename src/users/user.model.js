@@ -1,4 +1,4 @@
-angular.module('app.users').factory('User', ['$http' function ($http) {
+angular.module('app.users').factory('User', ['$http', function ($http) {
     var User = function (user) {
         
     };

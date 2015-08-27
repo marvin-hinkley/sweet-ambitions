@@ -1,6 +1,6 @@
 {
-    "name": "microvellum-client-portal",
-    "description": "builds production files",
+    "name": "sweet-ambitions",
+    "description": "website and management application for FFXIV free company Sweet Ambitions",
     "version": "1.0.0",
     "main": "server.js",
     "scripts": {
@@ -14,7 +14,7 @@
         "morgan": "latest",
         "serve-static": "latest",
         "socket.io": "latest",
-        "mongoose": "latest",
+        "mongoose": "latest"
     },
     "devDependencies": {
         "grunt": "^0.4.5",

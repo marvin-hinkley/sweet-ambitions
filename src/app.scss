@@ -1,5 +1,7 @@
 @import 'settings';
 @import 'posts/posts';
+@import 'tasks/tasks';
+@import 'users/users';
 
 //---------------------------Global-------------------------------------
 * {
@@ -9,28 +11,28 @@
 *, *:before, *:after {
     box-sizing: border-box;
 }
-html, body {
-    background-color: $color-secondary;
-    color: black;
-    font-family: $font-primary;
-    overflow: hidden;
-}
-a {
-    text-decoration: none;
-    color: $color-accent;
-    &:hover {
-        color: $color-primary;
-    }
-}
-.pointer {
-    cursor: pointer;
-}
-h1, h2, h3 {
-    color: $color-secondary;
-}
-h4, h5, h6 {
-    color: $color-primary;
-}
-hr {
-  margin-top: 0;
-}
+//html, body {
+//    background-color: $color-secondary;
+//    color: black;
+//    font-family: $font-primary;
+//    overflow: hidden;
+//}
+//a {
+//    text-decoration: none;
+//    color: $color-accent;
+//    &:hover {
+//        color: $color-primary;
+//    }
+//}
+//.pointer {
+//    cursor: pointer;
+//}
+//h1, h2, h3 {
+//    color: $color-secondary;
+//}
+//h4, h5, h6 {
+//    color: $color-primary;
+//}
+//hr {
+//  margin-top: 0;
+//}
