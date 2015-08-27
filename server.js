@@ -10,7 +10,8 @@ var express         = require('express'),
     app             = express(),
     io              = require('socket.io'),
     routes          = require('./routes/routes'),
-    mongoose        = require('mongoose');
+    mongoose        = require('mongoose'),
+    jwt             = require('jsonwebtoken');
 
 //Configuration---------------------------------------------------------------------------------
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -20,6 +21,8 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
+
+var secret = 'SECRET';
 
 //var redisPub = redis.createClient();
 //var redisSub = redis.createClient();
@@ -34,8 +37,18 @@ mongoose.connect('mongodb://localhost/sweet_ambitions');
 io = io.listen(server);
 
 //Routes----------------------------------------------------------------------------------------
-app.use('/api', routes)(app, mongoose);
-
+app.use('/api', routes(express, mongoose));
+app.get('*', function(req, res) {
+    res.sendFile('index.html', {
+        root: __dirname + '/dist/',
+        dotfiles: 'deny'
+    }, function(err) {
+        if (err) {
+            console.log(err);
+            res.status(err.status).end();
+        }
+    });
+});
 //Socket Server------------------------------------------------------------------------------------
 //io.sockets.on('connection', function(client) {
 //    client.on('connect', function () {

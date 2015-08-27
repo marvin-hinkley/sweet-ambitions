@@ -1,4 +1,4 @@
-angular.module('app').controller('app.controller', ['$scope', 'authService', function ($scope, authService) {
+angular.module('app').controller('app.controller', ['$scope', '$sessionStorage', 'authService', function ($scope, $sessionStorage, authService) {
     $scope.user = $sessionStorage.user;
 
     $scope.sidebar = {

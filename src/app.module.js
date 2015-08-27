@@ -9,10 +9,11 @@ var app = angular.module('app', [
     //app
     'app.users',
     'app.posts',
-    'app.tasks'
+    'app.tasks',
+    'app.auth'
 ]);
 
-clientPortal.config(['$stateProvider', '$httpProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider',
+app.config(['$stateProvider', '$httpProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider',
 function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $locationProvider.html5Mode(true);
     //Routes
@@ -25,6 +26,6 @@ function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider, 
     });
 }]);
 
-clientPortal.run(['$state', '$rootScope', function ($state, $rootScope) {
+app.run(['$state', '$rootScope', function ($state, $rootScope) {
     
 }]);
